@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>マクドナルドメニュー選択</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffcb05;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>マクドナルドメニュー選択</h1>
+    <p id="result"></p>
+    <button onclick="selectRandomMenu()">メニューを選ぶ</button>
+  </div>
+
+  <script>
+    // マクドナルドのセットメニュー
+    const sets = [
+      {
+        name: "ビッグマックセット",
+        burger: "ビッグマック",
+        side: "ポテト",
+        drink: "コカ・コーラ"
+      },
+      {
+        name: "チーズバーガーセット",
+        burger: "チーズバーガー",
+        side: "チキンマックナゲット",
+        drink: "ファンタオレンジ"
+      },
+      {
+        name: "フィレオフィッシュセット",
+        burger: "フィレオフィッシュ",
+        side: "マックフライポテト",
+        drink: "オレンジジュース"
+      },
+      // 他のセットメニューを追加
+    ];
+
+    // マクドナルドのハンバーガー
+    const burgers = [
+      "焙煎胡麻えびフィレオ",
+      "ジューシーチキンブラックペッパー",
+      "ビックマック",
+      "炙り醤油風ダブル肉厚ビーフ",
+      "炙り醤油風ベーコントマト肉厚ビーフ",
+      "ダブルチーズバーガー",
+      "てりやきマックバーガー",
+      "フィレオフィッシュ",
+      "チキンフィレオ",
+      "てりやきチキンフィレオ",
+      "ベーコンレタスバーガー",
+      "えびフィレオ",
+      "スパイシーチキンバーガー(スパチキ)",
+      "スパイシービーフバーガー(スパビー)",
+      "エッグチーズバーガー(エグチ)",
+      "チキンチーズバーガー(チキチー)",
+      "チキンクリスプ",
+      "たまごダブル",
+      // 他のハンバーガーを追加
+    ];
+
+    // マクドナルドのサイドメニュー
+    const sides = [
+      "ポテトS",
+      "ポテトM",
+      "ポテトL",
+      "チキンマックナゲット",
+      "スパイシーチキンマックナゲット",
+      "サラダ",
+      "枝豆コーン",
+      "ヨーグルト",
+      // 他のサイドメニューを追加
+    ];
+
+    // マクドナルドのドリンク
+    const drinks = [
+    "コカ・コーラ",
+      "コカコーラ・ゼロ",
+      "スプライト",
+      "ファンタグレープ",
+      "ファンタメロン",
+      "オレンジジュース",
+      "Qooスッキリ白ぶどう",
+      "爽健美茶",
+      "野菜生活",
+      "アップルジュース",
+      "ミルク",
+      "黒烏龍茶",
+      // 他のドリンクを追加
+    ];
+
+    function selectRandomMenu() {
+      const randomSet = sets[Math.floor(Math.random() * sets.length)];
+      const randomBurger = burgers[Math.floor(Math.random() * burgers.length)];
+      const randomSide = sides[Math.floor(Math.random() * sides.length)];
+      const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
+
+      document.getElementById("result").innerHTML = `
+        
+        ハンバーガーは「${randomBurger}」です！<br>
+        サイドメニューは「${randomSide}」です！<br>
+        ドリンクは「${randomDrink}」です！
+      `;
+    }
+  </script>
+</body>
+</html>
