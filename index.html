@@ -22,9 +22,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>マクドナルドメニュー選択</h1>
+    <h1>マックメニュールーレット</h1>
     <p id="result"></p>
-    <button onclick="selectRandomMenu()">メニューを選ぶ</button>
+    <button onclick="selectRandomMenu()">Push</button>
   </div>
 
   <script>
@@ -112,9 +112,9 @@
 
       document.getElementById("result").innerHTML = `
         
-        ハンバーガーは「${randomBurger}」です！<br>
-        サイドメニューは「${randomSide}」です！<br>
-        ドリンクは「${randomDrink}」です！
+        ハンバーガー「${randomBurger}」<br>
+        サイド「${randomSide}」<br>
+        ドリンク「${randomDrink}」
       `;
     }
   </script>
