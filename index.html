@@ -3,27 +3,47 @@
 <head>
   <title>マクドナルドメニュー選択</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@800&display=swap');
+    html{
+      background-color: #ffcb05;
+      font-family: 'Shippori Mincho', serif;
+
+    }
     .container {
-      max-width: 400px;
       margin: 0 auto;
       text-align: center;
-      padding: 20px;
+      padding: 5px;
     }
 
     button {
       margin-top: 20px;
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #ffcb05;
+      color:white;
+      background-color: #ff0505;
       border: none;
       cursor: pointer;
+    }
+
+    .column {
+      display: inline-block;
+      width: 80%;
+      text-align: center;
+      padding: 20px;
+            background-color: #f2f2f2;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 10px;
+      margin-top:1em;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>マックメニュールーレット</h1>
-    <p id="result"></p>
+    <div id="hanb"></div>
+    <div id="side"></div>
+    <div id="drink"></div>
     <button onclick="selectRandomMenu()">Push</button>
   </div>
 
@@ -110,11 +130,17 @@
       const randomSide = sides[Math.floor(Math.random() * sides.length)];
       const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
 
-      document.getElementById("result").innerHTML = `
-        
-        ハンバーガー「${randomBurger}」<br>
-        サイド「${randomSide}」<br>
-        ドリンク「${randomDrink}」
+      document.getElementById("hanb").innerHTML = ` 
+  <div class="column">🍔 ハンバーガー「${randomBurger}」</div>
+    
+      `;
+            document.getElementById("side").innerHTML = `
+        <div class="column">🍟サイド
+        「${randomSide}」</div>
+      `;
+            document.getElementById("drink").innerHTML = `
+        <div class="column">🥤 ドリンク
+        「${randomDrink}」</div>
       `;
     }
   </script>
